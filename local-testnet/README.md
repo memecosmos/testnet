@@ -2,8 +2,11 @@
 ## easy installer for Meme network dapp developer
 
 Run the following command in a terminal and you’re ready to go!
+
 chain-id : meme-local-1
+
 keyring-backend : test
+
 
 ```
 curl -sSL https://raw.githubusercontent.com/memecosmos/testnet/main/local-testnet/installer-local-meme.sh | bash
