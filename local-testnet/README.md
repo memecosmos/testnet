@@ -1,5 +1,5 @@
 
-## easy installer for Meme network dapp developer
+## easy installer for LocalMeme for dapp developer
 
 Run the following command in a terminal and you’re ready to go!
 
