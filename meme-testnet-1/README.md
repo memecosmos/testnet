@@ -1,4 +1,4 @@
-## easy installer for Join Meme testnet 
+## Join Meme testnet 
 
 Run the following command in a terminal and you’re ready to go!
 
@@ -6,6 +6,7 @@ chain-id : meme-testnet-1
 
 keyring-backend : test
 
+### Easy installer :
 ```
 curl -sSL https://raw.githubusercontent.com/memecosmos/testnet/main/meme-testnet-1/meme-testnet.sh | bash
 ```
@@ -21,6 +22,7 @@ curl -sSL https://raw.githubusercontent.com/memecosmos/testnet/main/meme-testnet
 | API | https://api-testnet-1.meme.sx |
 | RPC | https://rpc-testnet-1.meme.sx |
 | Explorer | https://explorer-testnet-1.meme.sx/meme-testnet-1 |
+| Explorer2 | https://testnet.ping.pub/meme |
 
 
 ## Testnet Peers:
