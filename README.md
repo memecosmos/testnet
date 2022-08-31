@@ -6,7 +6,7 @@ Join Meme testnet or install LocalMeme and start building
 
 ## Upgrade Meme testnet
 
-* [Upgrade Meme chain testnet from v1.0.0 to v2.0.5.](https://github.com/memecosmos/testnet/blob/main/upgrade-memed.md)
+* [Upgrade Meme chain testnet from v1.0.0 to v2.0.5.](https://github.com/memecosmos/testnet/blob/main/upgrade-memed-v1.0.0-v2.0.5.md)
 
 
 ## Join Meme testnet
