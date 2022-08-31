@@ -12,7 +12,10 @@ https://testnet.ping.pub/meme/gov/7
 
 ## Issue :
 #### panic: cannot delete latest saved version
-* fixed : pruning = nothing 
+* fixed : `pruning = nothing`
+
+#### error while loading shared libraries: libwasmvm.x86_64.so
+* fixed : `wget -P /usr/lib https://github.com/CosmWasm/wasmvm/raw/main/api/libwasmvm.x86_64.so`
 
 #### Error: error during handshake: error on replay: wrong Block.Header.AppHash.
 * fixed : snapshot : https://testnet-snapshot.meme.sx/how.txt
