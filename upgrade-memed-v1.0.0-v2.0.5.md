@@ -9,6 +9,9 @@ Block height : `1821660`
 
 https://testnet.ping.pub/meme/gov/7
 
+## IBC Test:
+* Pass: https://www.mintscan.io/osmosis/relayers/channel-317
+
 
 ## Issue :
 #### panic: cannot delete latest saved version
