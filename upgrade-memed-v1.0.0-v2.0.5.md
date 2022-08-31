@@ -74,11 +74,37 @@ cosmovisor version
 
 ```
 
-Now `memed` can start by running
+Create `memed` as a service
 
 ```bash
-cosmovisor start
+sudo tee /etc/systemd/system/memed.service > /dev/null <<EOF
+[Unit]
+Description=MEME Daemon
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/root/go/bin/cosmovisor run start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+Environment="DAEMON_HOME=/root/.memed"
+Environment="DAEMON_NAME=memed"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
+Then, run:
+sudo systemctl daemon-reload
+sudo systemctl enable memed
+
+### Start memed
+sudo systemctl start memed
+
 
 ### Preparing an Upgrade
 
