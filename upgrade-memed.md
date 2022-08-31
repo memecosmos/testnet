@@ -1,6 +1,37 @@
-# Upgrade MEME Node
+# Upgrade MEME Node from v1.0.0 to v2.0.5.
 
 This document describes the upgrade procedure of a `memed` full-node to a new version.
+
+## Proposal :
+This proposal is for upgrading the Meme chain testnet software from v1.0.0 to v2.0.5.
+
+Block height : `1821660`
+
+https://testnet.ping.pub/meme/gov/7
+
+
+## Issue :
+#### panic: cannot delete latest saved version
+* fixed : pruning = nothing 
+
+#### Error: error during handshake: error on replay: wrong Block.Header.AppHash.
+* fixed : snapshot : https://testnet-snapshot.meme.sx/how.txt
+```
+
+rm ~/.memed/data -r
+rm ~/.memed/wasm -r
+
+mkdir ~/.memed/data; mkdir ~/.memed/wasm
+
+cd ~/.memed/data; 
+wget -O - https://testnet-snapshot.meme.sx/memed-testnet-1_2022-08-31.tar  | tar xf -
+
+cd ~/.memed/wasm
+wget -O - https://testnet-snapshot.meme.sx/memed_wasm.tar | tar xf -
+
+
+```
+
 
 ## Cosmovisor
 
