@@ -18,7 +18,17 @@ https://testnet.ping.pub/meme/gov/7
 * fixed : `pruning = nothing`
 
 #### error while loading shared libraries: libwasmvm.x86_64.so
-* fixed : `wget -P /usr/lib https://github.com/CosmWasm/wasmvm/raw/main/api/libwasmvm.x86_64.so`
+* fixed : `wget -P /usr/lib https://github.com/CosmWasm/wasmvm/blob/0ff9c3a666ef15b12e447e830cc32a3314325ef0/api/libwasmvm.x86_64.so`
+
+or re-compile meme software:
+
+```
+git clone https://github.com/memecosmos/meme
+go clean --cache
+make clean
+git checkout v2.0.5
+make install
+```
 
 #### Error: error during handshake: error on replay: wrong Block.Header.AppHash.
 * fixed : snapshot : https://testnet-snapshot.meme.sx/how.txt
