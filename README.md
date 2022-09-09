@@ -6,6 +6,7 @@ Join Meme testnet or install LocalMeme and start building
 
 ## Upgrade Meme testnet
 
+* [Hard fork for fixed v2.0.5 issue and upgrade to v2.0.8](https://github.com/memecosmos/testnet/blob/main/meme-testnet-2/hard-fork-guide-to-meme-testnet-2.md)
 * [Upgrade Meme chain testnet from v1.0.0 to v2.0.5.](https://github.com/memecosmos/testnet/blob/main/upgrade-memed-v1.0.0-v2.0.5.md)
 
 
