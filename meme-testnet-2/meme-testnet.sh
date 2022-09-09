@@ -23,6 +23,9 @@ RPC3="http://128.199.197.228:26657"
 
 service memed-testnet stop
 
+backup priv_validator_key.json 
+cp ~/.memed/config/priv_validator_key.json ~/
+
 
 rm -r ~/.go -rf
 wget -q -O - https://git.io/vQhTU | bash -s -- --version 1.18.5
@@ -99,7 +102,7 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
-
+cp ~/priv_validator_key.json ~/.memed/config/priv_validator_key.json
 
 systemctl enable memed-testnet --now
 
