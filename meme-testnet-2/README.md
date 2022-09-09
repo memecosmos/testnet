@@ -9,6 +9,8 @@ chain-id : `meme-testnet-2`
 
 keyring-backend : `test`
 
+---
+
 ### Easy installer :
 ```
 curl -sSL https://raw.githubusercontent.com/memecosmos/testnet/main/meme-testnet-2/meme-testnet.sh | bash
