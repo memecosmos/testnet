@@ -1,6 +1,8 @@
 ## Join Meme testnet 
 
-can use hard-fork-guide for upgrade to v2.0.8 or :
+You can use https://github.com/memecosmos/testnet/blob/main/meme-testnet-2/hard-fork-guide-to-meme-testnet-2.md for upgrade to v2.0.8 
+or :
+
 
 Run the following command in a terminal and you’re ready to go!
 
