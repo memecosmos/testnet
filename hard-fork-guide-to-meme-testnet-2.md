@@ -19,7 +19,15 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"\"/" ~/.memed/confi
 PEERS="cfd6bbf0f73fc6bebe77186fe074eaee313b9e69@143.198.102.36:26656,964a2d95dc93d6493c51ecd80ed3acc444839b9e@45.76.177.106:26656,decd5a2f00260c65c43b531cb9b0b8e542419f4c@134.122.18.140:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.memed/config/config.toml
 ```
-### 6 Download and install the new binary
+
+### 6. upgrade go to 1.18.5
+```sh
+rm -r ~/.go -rf
+wget -q -O - https://git.io/vQhTU | bash -s -- --version 1.18.5
+source ~/.bashrc
+```
+
+### 7. Download and install the new binary
 #Install memed v2.0.8
 ```sh
 git clone https://github.com/memecosmos/meme.git
@@ -39,7 +47,7 @@ commit: bb4573ca7e8a31ca52abf6866e2340ed0e288722
 build_tags: netgo,ledger
 go: go version go1.18.5 linux/amd64
 ```
-### 7. [OPTIONAL] If you use cosmovisor
+### 8. [OPTIONAL] If you use cosmovisor
 You will need to re-setup cosmovisor with the new genesis.
 ```sh
 rm $DAEMON_HOME/cosmovisor/genesis/bin/memed
@@ -65,35 +73,35 @@ tree $DAEMON_HOME/cosmovisor
 └── upgrades
 ```
 
-### 8. Download the  genesis
+### 9. Download the  genesis
 ```sh
 rm ~/.memed/config/genesis.json
-wget https://github.com/memecosmos/testnet/raw/main/meme-testnet-1/meme-testnet-genesis-v2.0.5-to-v2.0.8.tar.gz
-tar -zxvf meme-testnet-genesis-v2.0.5-to-v2.0.8.tar.gz
-mv memed_testnet_genesis_export.json $HOME/.memed/config/genesis.json
+wget https://github.com/memecosmos/testnet/raw/main/meme-testnet-2/meme-testnet-2-genesis.tar.gz
+tar -zxvf meme-testnet-2-genesis.tar.gz
+mv genesis.json ~/.memed/config/genesis.json
 ```
 
-### 9. Verify genesis shasum
+### 10. Verify genesis shasum
 ```sh
 jq -S -c -M '' ~/.memed/config/genesis.json | sha256sum
 
 # this will return
-# 8bf42fda1da6ce019ad8c8fbb198ec2237f25f8b18ec9d088c9ed321ab71d266
+# 57964f8190a18a9a37fe96e5ae4b3c64a883825200a1172d3869db03403c8826
 ```
-### 10. Be paranoid
+### 11. Be paranoid
 #This isn't strictly necessary - you can skip it, just double-check.
 ```sh
 memed tendermint unsafe-reset-all --home $HOME/.memed
 ```
-### 11. Restore priv_validator_key.json and priv_validator_state.json
+### 12. Restore priv_validator_key.json and priv_validator_state.json
 ```sh
 cp ~/.memed.bak/config/priv_validator_key.json ~/.memed/config/priv_validator_key.json
 ```
-### 12. Start the node
+### 13. Start the node
 ```sh
 sudo systemctl restart memed
 ```
-### 13. Confirm the process running
+### 14. Confirm the process running
 ```sh
 sudo journalctl -fu memed
 ```
