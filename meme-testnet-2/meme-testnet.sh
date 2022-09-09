@@ -19,7 +19,7 @@ done
 
 RPC1="https://rpc-testnet-1.meme.sx:443"
 RPC2="http://143.198.102.36:26657"
-RPC3="http://128.199.197.228:26657"
+RPC3="https://meme-testnet-rpc.polkachu.com:443"
 
 service memed-testnet stop
 
@@ -67,6 +67,7 @@ curl -# https://raw.githubusercontent.com/memecosmos/testnet/main/meme-testnet-2
 
 sed -i -E 's/minimum-gas-prices = \"\"/minimum-gas-prices = \"0.025umeme\"/g' $app
 
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"\"/" ~/.memed/config/config.toml
 PEERS="cfd6bbf0f73fc6bebe77186fe074eaee313b9e69@143.198.102.36:26656,964a2d95dc93d6493c51ecd80ed3acc444839b9e@45.76.177.106:26656,decd5a2f00260c65c43b531cb9b0b8e542419f4c@134.122.18.140:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.memed/config/config.toml
 
