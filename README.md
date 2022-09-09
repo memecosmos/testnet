@@ -11,7 +11,7 @@ Join Meme testnet or install LocalMeme and start building
 
 ## Join Meme testnet
 
-* [meme-testnet-1](https://github.com/memecosmos/testnet/tree/main/meme-testnet-1)
+* [meme-testnet-2](https://github.com/memecosmos/testnet/tree/main/meme-testnet-2)
 
 
 ## Install LocalMeme 
