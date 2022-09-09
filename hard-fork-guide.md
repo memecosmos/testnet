@@ -68,8 +68,9 @@ tree $DAEMON_HOME/cosmovisor
 ### 8. Download the  genesis
 ```sh
 rm ~/.memed/config/genesis.json
-wget 
-mv genesis.json $HOME/.memed/config/genesis.json
+wget https://github.com/memecosmos/testnet/raw/main/meme-testnet-1/meme-testnet-genesis-v2.0.5-to-v2.0.8.tar.gz
+tar -zxvf meme-testnet-genesis-v2.0.5-to-v2.0.8.tar.gz
+mv memed_testnet_genesis_export.json $HOME/.memed/config/genesis.json
 ```
 
 ### 9. Verify genesis shasum
