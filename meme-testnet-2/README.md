@@ -15,6 +15,12 @@ keyring-backend : test
 curl -sSL https://raw.githubusercontent.com/memecosmos/testnet/main/meme-testnet-2/meme-testnet.sh | bash
 ```
 
+### Additional tools for MEME testnet, can be found at Polkachu Validators :
+
+https://polkachu.com/testnets/meme
+
+
+## Info :
 
 | API port | 1317 |
 | --- | --- |
