@@ -9,13 +9,26 @@ Block height : `1821660`
 
 https://testnet.ping.pub/meme/gov/7
 
+## IBC Test:
+* Pass: https://www.mintscan.io/osmosis/relayers/channel-317
+
 
 ## Issue :
 #### panic: cannot delete latest saved version
 * fixed : `pruning = nothing`
 
 #### error while loading shared libraries: libwasmvm.x86_64.so
-* fixed : `wget -P /usr/lib https://github.com/CosmWasm/wasmvm/raw/main/api/libwasmvm.x86_64.so`
+* fixed : `wget -P /usr/lib https://github.com/CosmWasm/wasmvm/blob/0ff9c3a666ef15b12e447e830cc32a3314325ef0/api/libwasmvm.x86_64.so`
+
+or re-compile meme software:
+
+```
+git clone https://github.com/memecosmos/meme
+go clean --cache
+make clean
+git checkout v2.0.5
+make install
+```
 
 #### Error: error during handshake: error on replay: wrong Block.Header.AppHash.
 * fixed : snapshot : https://testnet-snapshot.meme.sx/how.txt
@@ -74,11 +87,37 @@ cosmovisor version
 
 ```
 
-Now `memed` can start by running
+Create `memed` as a service
 
 ```bash
-cosmovisor start
+sudo tee /etc/systemd/system/memed.service > /dev/null <<EOF
+[Unit]
+Description=MEME Daemon
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/root/go/bin/cosmovisor run start
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+Environment="DAEMON_HOME=/root/.memed"
+Environment="DAEMON_NAME=memed"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+
+[Install]
+WantedBy=multi-user.target
+EOF
 ```
+Then, run:
+sudo systemctl daemon-reload
+sudo systemctl enable memed
+
+### Start memed
+sudo systemctl start memed
+
 
 ### Preparing an Upgrade
 
