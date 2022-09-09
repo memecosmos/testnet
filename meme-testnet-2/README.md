@@ -1,8 +1,7 @@
 ## Join Meme testnet 
 
-You can follow the steps in https://github.com/memecosmos/testnet/blob/main/meme-testnet-2/hard-fork-guide-to-meme-testnet-2.md for upgrade to v2.0.8 
+You can follow the steps in [hard-fork-guide-to-meme-testnet-2.md](https://github.com/memecosmos/testnet/blob/main/meme-testnet-2/hard-fork-guide-to-meme-testnet-2.md) for upgrade to v2.0.8
 or :
-
 
 Run the following command in a terminal and you’re ready to go!
 
@@ -26,6 +25,7 @@ https://polkachu.com/testnets/meme
 | --- | --- |
 | RPC port | 26657 |
 | P2P port | 26656 |
+
 
 | Faucet | https://testnet-faucet.meme.sx |
 | --- | --- |
