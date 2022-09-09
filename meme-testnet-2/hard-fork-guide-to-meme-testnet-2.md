@@ -20,7 +20,7 @@ PEERS="cfd6bbf0f73fc6bebe77186fe074eaee313b9e69@143.198.102.36:26656,964a2d95dc9
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.memed/config/config.toml
 ```
 
-### 6. upgrade go to 1.18.5
+### 6. upgrade Go lang to 1.18.5
 ```sh
 rm -r ~/.go -rf
 wget -q -O - https://git.io/vQhTU | bash -s -- --version 1.18.5
