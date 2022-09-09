@@ -5,9 +5,9 @@ or :
 
 Run the following command in a terminal and you’re ready to go!
 
-chain-id : meme-testnet-2
+chain-id : `meme-testnet-2`
 
-keyring-backend : test
+keyring-backend : `test`
 
 ### Easy installer :
 ```
