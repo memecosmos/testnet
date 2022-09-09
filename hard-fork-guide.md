@@ -12,12 +12,12 @@ memed tendermint unsafe-reset-all --home $HOME/.memed
 ```
 ### 4. Purge current peers from config.toml
 ```sh
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"\"/" ~/.meme/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"\"/" ~/.memed/config/config.toml
 ```
 ### 5. Add peers to config.toml
 ```sh
 PEERS="cfd6bbf0f73fc6bebe77186fe074eaee313b9e69@143.198.102.36:26656,964a2d95dc93d6493c51ecd80ed3acc444839b9e@45.76.177.106:26656,decd5a2f00260c65c43b531cb9b0b8e542419f4c@134.122.18.140:26656"
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.memed/config/config.toml`
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.memed/config/config.toml
 ```
 ### 6 Download and install the new binary
 #Install memed v2.0.8
